@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Website</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #page {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-rows: 1.5fr 0.5fr 0.5fr 0.5fr;
+        grid-template-areas:
+          "home home home "
+          "destinations destinations destinations "
+          "review review review "
+          "footer footer footer ";
+        grid-gap: 20px;
+      }
+      header {
+        grid-area: header;
+        background-size: cover;
+        color: white;
+        display: grid;
+        grid-template-columns: 0.5fr 4fr 1fr 1fr 1fr 1fr 1fr;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: rgba(0, 0, 0, 0.3);
+        width: 100%;
+        position: fixed;
+      }
+      header img {
+        height: 50px;
+        margin-right: 10px;
+      }
+      header p {
+        margin: 0;
+        font-size: 24px;
+        color: white;
+      }
+      header label {
+        font-size: 24px;
+        margin: 0;
+        color: blue;
+      }
+      header a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+      .hero {
+        background-image: url(travelmain.avif);
+        background-size: 100% 100%;
+        grid-area: home;
+      }
+      #home {
+        text-align: left;
+        padding: 100px 30px;
+        width: 20%;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+      #destinations {
+        grid-area: destinations;
+        padding: 20px;
+        text-align: center;
+      }
+      #destinations1 {
+        grid-area: destinations;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: flex-start;
+      }
+      h2 {
+        width: 100%;
+        text-align: center;
+      }
+      hr {
+        width: 10%;
+        margin-left: 45%;
+        margin-top: none;
+        height: 2px;
+        background-color: blue;
+        align-items: center;
+      }
+      #dest-paris,
+      #dest-bali,
+      #dest-japan,
+      #dest-south-africa {
+        display: inline-block;
+        width: 25%;
+        margin: 20px;
+        text-align: left;
+        border-radius: 10px;
+      }
+      #dest-paris img,
+      #dest-bali img,
+      #dest-japan img,
+      #dest-south-africa img {
+        width: 100%;
+        height: 200px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+      #explore {
+        color: blue;
+        font-weight: bold;
+      }
+      button {
+        background-color: blue;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      #reviewall {
+        background-color: rgb(238, 251, 255);
+        grid-area: review;
+      }
+      #reviewall h2 {
+        color: black;
+        padding-top: 20px;
+      }
+      #review {
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      #review1,
+      #review2 {
+        display: flex;
+        flex-direction: row;
+        width: 40%;
+        margin: 20px;
+        text-align: left;
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      #customer {
+        width: 150px;
+        height: 150px;
+        margin: 20px;
+        text-align: left;
+        border-radius: 50%;
+        float: left;
+      }
+      #stars {
+        width: 100px;
+        height: 20px;
+      }
+      .review {
+        width: 40%;
+      }
+      footer {
+        background-color: rgb(5, 56, 71);
+        grid-area: footer;
+      }
+      #footer {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 20px;
+        color: white;
+      }
+      footer a {
+        color: white;
+        text-decoration: none;
+      }
+      footer img {
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+        margin-right: none;
+        background: none;
+      }
+      footer label {
+        margin: 0;
+        color: blue;
+      }
+      #end {
+        text-align: center;
+        padding: 10px;
+        color: white;
+      }
+      #tag {
+        display: flex;
+        align-items: center;
+      }
+      a:hover {
+        color: blue;
+      }
+      button:hover {
+        background-color: darkblue;
+      }
+      #dest-paris:hover,
+      #dest-bali:hover,
+      #dest-japan:hover,
+      #dest-south-africa:hover {
+        width: 400px;
+        background-color: rgb(142, 182, 194);
+        transition: smooth;
+      }
+      #dest-paris:target,
+      #dest-bali:target,
+      #dest-japan:target,
+      #dest-south-africa:target {
+        width: 400px;
+        transition: smooth;
+        transition-duration: 0.5s;
+      }
+      #home,
+      #destinations,
+      #reviews,
+      #footer {
+        scroll-margin-top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <div class="hero">
+        <header>
+          <img src="logo.jpg" alt="Travel Logo" id="logo" />
+          <p>Travel<label id="name">Go</label></p>
+          <a href="#home">Home</a>
+          <a href="#destinations">Destinations</a>
+          <a href="#reviewall">Reviews</a>
+          <a href="#footer">Contact</a>
+          <button id="book-now">Book Now</button>
+        </header>
+        <div id="home">
+          <h1>Explore Beautiful Places</h1>
+          <p>
+            Travel the world with us and create unforgettable memories!<br /><br /><br /><br />
+          </p>
+          <button id="book-now">Book Now -></button>
+        </div>
+      </div>
+      <div id="destinations">
+        <h2>Popular Destinations</h2>
+        <hr />
+        <div id="destinations1">
+          <div id="dest-paris">
+            <img src="paris.webp" alt="Paris" />
+            <h3>Paris, France</h3>
+            <p>
+              The city of love and lights. Explore iconic landmarks like the
+              Eiffel Tower and Louvre Museum.<br /><br />
+              <a href="#destinations" id="explore">Explore -></a>
+            </p>
+          </div>
+          <div id="dest-bali">
+            <img src="bali.webp" alt="Bali" />
+            <h3>Bali, Indonesia</h3>
+            <p>
+              A tropical paradise known for its stunning beaches, vibrant
+              culture, and lush landscapes.<br /><br />
+              <a href="#destinations" id="explore">Explore -></a>
+            </p>
+          </div>
+          <div id="dest-japan">
+            <img src="japan.jpeg" alt="Japan" />
+            <h3>Tour of Japan</h3>
+            <p>
+              A blend of tradition and modernity, offering vibrant culture,
+              technology, and cuisine.<br /><br />
+              <a href="#destinations" id="explore">Explore -></a>
+            </p>
+          </div>
+          <div id="dest-south-africa">
+            <img src="south africa.webp" alt="South Africa" />
+            <h3>Tour of South Africa</h3>
+            <p>
+              Discover the diverse landscapes and rich culture of South
+              Africa.<br /><br />
+              <a href="#destinations" id="explore">Explore -></a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="reviewall">
+        <h2>What Our Travellers Say</h2>
+        <hr />
+        <div id="review">
+          <div id="review1">
+            <img src="girl.jpg" alt="Customer" id="customer" />
+            <div class="review">
+              <img src="5stars.jpg" alt="5 Stars" id="stars" />
+              <p>
+                "TravelGo made my trip to Paris unforgettable! The service was
+                excellent and the itinerary was perfect."
+              </p>
+              <h4>- Ratna Sharma</h4>
+              <p>Delhi, India</p>
+            </div>
+          </div>
+          <div id="review2">
+            <img src="guy.jpg" alt="Customer" id="customer" />
+            <div class="review">
+              <img src="4.5stars.png" alt="4.5 Stars" id="stars" />
+              <p>
+                "The tour of Japan was amazing! TravelGo planned everything
+                perfectly."
+              </p>
+              <h4>- Vijay Reddy</h4>
+              <p>Hyderabad, India</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div id="footer">
+          <div id="box">
+            <div id="tag">
+              <img src="logo.jpg" alt="Travel Logo" id="logo" />
+              <p>Travel<label id="name">Go</label></p>
+            </div>
+            <p>
+              Explore the world with us!<br />
+              Your journey starts here!
+            </p>
+            <a href="https://www.facebook.com" target="_blank">
+              <img src="fb.jpg" id="social" alt="Facebook" />
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+              <img src="twitter.jpg" id="social" alt="Twitter" />
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+              <img src="insta.jpg" id="social" alt="Instagram" />
+            </a>
+            <a href="https://www.youtube.com" target="_blank">
+              <img src="yt.jpg" id="social" alt="YouTube" />
+            </a>
+          </div>
+          <div id="box">
+            <h4>Quick Links</h4>
+            <a href="#home">Home</a><br />
+            <a href="#destinations">Destinations</a><br />
+            <a href="#review">Reviews</a><br />
+            <a href="#contact">Contact</a><br />
+          </div>
+          <div id="box">
+            <h4>Top Destinations</h4>
+            <a href="#dest-paris">Paris, France</a><br />
+            <a href="#dest-bali">Bali, Indonesia</a><br />
+            <a href="#dest-japan">Japan</a><br />
+            <a href="#dest-south-africa">South Africa</a><br />
+          </div>
+          <div id="box">
+            <h4>Newsletter</h4>
+            <p>
+              Subscribe to our newsletter for the latest updates and offers!
+            </p>
+            <form>
+              <input type="email" placeholder="Your Email" required />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <p id="end">&copy; 2024 TravelGo. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
