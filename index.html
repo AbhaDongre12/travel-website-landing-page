@@ -222,6 +222,130 @@
       #footer {
         scroll-margin-top: 100px;
       }
+      @media (max-width: 992px) {
+        header {
+          grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+          padding: 15px;
+          gap: 10px;
+        }
+        header a {
+          font-size: 14px;
+          margin: 0;
+        }
+        #home {
+          width: 40%;
+          padding: 120px 20px;
+        }
+        #destinations1 {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        #dest-paris,
+        #dest-bali,
+        #dest-japan,
+        #dest-south-africa {
+          width: 40%;
+        }
+        #review {
+          flex-direction: column;
+          align-items: center;
+        }
+        #review1,
+        #review2 {
+          width: 80%;
+        }
+        #footer {
+          flex-wrap: wrap;
+          gap: 30px;
+        }
+      }
+      @media (max-width: 768px) {
+        header {
+          position: static;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+          text-align: center;
+        }
+        header a {
+          display: block;
+          margin: 5px 0;
+        }
+        header img {
+          margin-right: 0;
+        }
+        #book-now {
+          width: 150px;
+        }
+        .hero {
+          background-size: cover;
+          background-position: center;
+        }
+        #home {
+          width: 100%;
+          padding: 80px 20px;
+          text-align: center;
+        }
+        #home h1 {
+          font-size: 32px;
+        }
+        #destinations1 {
+          flex-direction: column;
+          align-items: center;
+        }
+        #dest-paris,
+        #dest-bali,
+        #dest-japan,
+        #dest-south-africa {
+          width: 90%;
+        }
+        #dest-paris:hover,
+        #dest-bali:hover,
+        #dest-japan:hover,
+        #dest-south-africa:hover {
+          width: 90%;
+        }
+        #review {
+          flex-direction: column;
+          align-items: center;
+        }
+        #review1,
+        #review2 {
+          width: 95%;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        #customer {
+          width: 100px;
+          height: 100px;
+        }
+        .review {
+          width: 100%;
+        }
+        #footer {
+          flex-direction: column;
+          text-align: center;
+          gap: 40px;
+        }
+        #tag {
+          justify-content: center;
+        }
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        form input,
+        form button {
+          width: 100%;
+        }
+        hr {
+          width: 30%;
+          margin-left: 35%;
+        }
+      }
     </style>
   </head>
   <body>
